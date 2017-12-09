@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Demo - (03)</title>  
+    <script type="text/javascript">
+
+    var arr1 = Array(4);
+    arr1[0] = "arr1 item 1";
+    arr1[1] = "arr1 item 2";
+    arr1[2] = "arr1 item 3";
+    arr1[3] = "arr1 item 4";
+
+    var arr2 = Array("arr2 item 1", "arr2 item 2", "arr2 item 3", "arr2 item 4");
+
+    var arr3 = ["arr3 item 1", "arr3 item 2", "arr3 item 3", "arr3 item 4"];
+
+    var arr4 = [];
+    arr4[0] = "arr4 item 1";
+    arr4[1] = "arr4 item 2";
+    arr4[2] = "arr4 item 3";
+    arr4[3] = "arr4 item 4";
+
+    function displayArray(arr) {
+    	var n = arr.length;
+    	var resultsDiv = document.getElementById("resultsDiv");
+
+    	while(resultsDiv.hasChildNodes()) {
+    		resultsDiv.removeChild(resultsDiv.lastChild);
+
+    	}
+
+    	for (var i = 0; i < n; i++) {
+    		var newDiv = document.createElement("div");
+    		newDiv.innerHTML = "Item " + (i+1).toString() + " of " + n.toString() + " is " + arr[i];
+    		resultsDiv.appendChild(newDiv);    		
+    	};
+
+    }
+
+	</script>  
+</head>
+<body>
+
+	<input type="button" value="Show Array 1" onclick="displayArray(arr1);">
+	<input type="button" value="Show Array 2" onclick="displayArray(arr2);">
+	<input type="button" value="Show Array 3" onclick="displayArray(arr3);">
+	<input type="button" value="Show Array 4" onclick="displayArray(arr4);">
+
+	<hr />
+
+	<div id="resultsDiv"></div>
+	
+
+</body>
+</html>

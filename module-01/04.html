@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Demo - (04)</title>  
+    <script type="text/javascript">
+
+    var emp = [];
+    emp["EmpNo"] = 1001;
+    emp["Name"] = "Jag";
+    emp["Sal"] = 5400.00;
+    emp["Dept"] = "Accounting";
+
+    function displayEmp() {
+    	var resultDiv = document.getElementById("resultDiv");
+
+    	while(resultDiv.hasChildNodes()) {
+    		resultDiv.removeChild(resultDiv.lastChild);
+
+    	}
+
+    	for(k in emp) {
+    		var newDiv = document.createElement("div");
+    		newDiv.innerHTML = k + " : " + emp[k];
+    		resultDiv.appendChild(newDiv);
+    	}
+
+    }
+ 
+    
+	</script>  
+</head>
+<body>
+
+	<input type="button" value="Display Employee Details" onclick="displayEmp();">
+	<div id="resultDiv"></div>
+	
+
+</body>
+</html>
