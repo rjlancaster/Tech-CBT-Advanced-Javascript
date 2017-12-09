@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Demo - (02)</title>  
+    <script type="text/javascript">
+
+    var list = [];
+
+    function addItemToExistingList() {
+    	var noOfItems = list.length;
+    	list[noOfItems] = document.getElementById("txtValue").value;
+    	displayResults();
+
+    }
+
+    function displayResults() {
+    	var n = list.length;
+    	document.getElementById("itemsCount").innerHTML = "No. of Items addedd: " + n.toString();
+
+    	var itemsListDiv = document.getElementById("itemsList");
+
+    	while(itemsListDiv.hasChildNodes()) {
+    		itemsListDiv.removeChild(itemsListDiv.lastChild);
+
+    	}
+
+    	for (var i = 0; i < n; i++) {
+    		var newDiv = document.createElement("div");
+    		newDiv.innerHTML = "Item " + (i+1).toString() + " of " + n.toString() + " is " + list[i];
+    		itemsListDiv.appendChild(newDiv);    		
+    	};
+    }
+	</script>  
+</head>
+<body>
+
+	<table>
+		<tr>
+			<td>
+				Enter Any Value:
+			</td>
+			<td>
+				<input type="text" id="txtValue" />
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+
+			</td>
+			<td>
+				<input type="button" value="Add to list" id="btnAdd" onclick="addItemToExistingList();">
+			</td>
+
+		</tr>
+
+	</table>
+
+	<hr />
+	<div id="itemsCount"></div>
+	<br />
+	<div id="itemsList"></div>
+	
+
+</body>
+</html>
