@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Dangers of Array length.</title>    
+</head>
+<body>
+	<script type="text/javascript">	
+	// Dangers of Array.ength.
+	// -> "length": gives the no. of items in an array
+	// var n = arr1.length; // no. of items
+	//  -> In reality, not quite that well in all scenarios!
+
+	// It does not work with "Associative Arrays" (arrays with string indexes).
+	// var emp = [];
+	// emp["Empno"] = 1001;
+	// emp["Name"] = "Suman";
+	// var n = emp.length; // Expected result 2, but return 0.
+
+	// Arrays with numeric indexes have some default characteristics.
+	// -> If you add an element using numeric indexe, arrays allocates for all previous indexes (if not // allocated already.)
+	// var arr1 = [];
+	// arr1[3] = "Suman"
+	// var n = arr1.length; // Expected result 1, but return 4;
+	// -> Results in a different "length" than you are supposed to see.
+
+	// Mixing Numeric and string indexes in the same array ?
+	// var arr3 = [];
+	// arr3[2] = "Something"
+	// arr3["Name"] = "Some Name";
+	// -> Not a good idea to generate this way an array. 
+	</script>
+
+</body>
+</html>

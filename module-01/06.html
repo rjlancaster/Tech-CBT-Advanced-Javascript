@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Demo - (06)</title>  
+    <script type="text/javascript">
+
+    var emp = [];
+    emp["EmpNo"] = 1001;
+    emp["Name"] = "Jag";
+    emp["Sal"] = 5400.00;
+    emp["Dept"] = "Accounting";
+
+    function btn1Click() {
+    	alert(emp.length);
+    }
+
+    var arr1 = [];
+    arr1[3] = "Something";
+
+    function btn2Click() {
+    	alert(arr1.length);
+    }
+
+    var arr2 = [];
+    arr1[3] = "Something";
+    arr1["Name"] = "Suman";
+
+
+    function btn3Click() {
+    	alert(arr2.length);
+    }
+    
+	</script>  
+</head>
+<body>	
+
+	<input type="button" value="Button 1" onclick="btn1Click();" />
+	<input type="button" value="Button 2" onclick="btn2Click();" />
+	<input type="button" value="Button 3" onclick="btn3Click();" />
+
+
+	
+
+</body>
+</html>
